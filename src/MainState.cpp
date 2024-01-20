@@ -4,20 +4,20 @@
 #include <Rendering/OpenGL/GLFrameBuffer.hpp>
 #include "TestScript.hpp"
 
-MainState::MainState() : State((RenderMode)(RenderMode_3D | RenderMode_2D)) {}
+MainState::MainState() : State(RenderMode_2D) {}
 MainState::~MainState() {}
 
 void MainState::Start()
 {
-    _camera = UserPerspectiveCamera::New({0.f, 0.f, 0.f}, 45.f);
+    _camera = UserPerspectiveCamera::New({0.f, 0.f, 5.f}, 45.f);
     
-    Entity sprite = _currentScene->NewEntity(glm::vec3{5.f, 0.f, 5.f});
+    Entity sprite = _currentScene->NewEntity();
     sprite.Add<Sprite>("assets/textures/container.jpg", 1.f);
 }
 
 void MainState::Update()
 {
-    UserCamera::ToPerspective(_camera)->UpdateControls(ControllerType::InPlane, 5.f);
+    UserCamera::ToPerspective(_camera)->UpdateControls(ControllerType::InPlane, 7.f);
     
     if (Input::IsKeyPressedOnce(Keys::Key_Escape))
     {

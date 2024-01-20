@@ -14,6 +14,6 @@ public:
     void Render() override;
 
 private:
-    bool lock;
+    bool _lock;
 };
 

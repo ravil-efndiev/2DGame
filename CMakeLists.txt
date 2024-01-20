@@ -6,7 +6,7 @@ add_executable(game src/Main.cpp src/MainState.cpp)
 
 set_property(TARGET game PROPERTY CXX_STANDARD 20)
 
-target_link_libraries(game ${CMAKE_CURRENT_SOURCE_DIR}/RVL/libRVL.a ${CMAKE_CURRENT_SOURCE_DIR}/RVL/RVL/vendor/assimp/bin/libassimp.5.2.5.dylib ${CMAKE_CURRENT_SOURCE_DIR}/RVL/RVL/vendor/lib/libglfw3.a)
+target_link_libraries(game ${CMAKE_CURRENT_SOURCE_DIR}/RVL/RVL/libRVL.a ${CMAKE_CURRENT_SOURCE_DIR}/RVL/RVL/vendor/assimp/bin/libassimp.5.2.5.dylib ${CMAKE_CURRENT_SOURCE_DIR}/RVL/RVL/vendor/lib/libglfw3.a)
 
 set(CMAKE_BUILD_TYPE Release)
 
